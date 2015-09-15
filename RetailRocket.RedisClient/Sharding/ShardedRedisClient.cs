@@ -189,21 +189,5 @@ namespace RetailRocket.RedisClient.Sharding
             foreach (var client in clientsCache)
                 client.Value.Dispose();
         }
-
-        public T GetFromCache<T>(string key, TimeSpan expiredIn, Func<T> refreshFunc) where T : class
-        {
-            var result = Get<T>(key);
-            if (result != null)
-            {
-                return result;
-            }
-
-            result = refreshFunc();
-            if (result != null)
-            {
-                Set(key, result, expiredIn);
-            }
-            return result;
-        }
     }
 }

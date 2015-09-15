@@ -27,6 +27,5 @@ namespace RetailRocket.RedisClient
         void SetEntryToHash<TValue>(string hashId, string key, TValue value);
         void PushItemToList<TValue>(string key, TValue value);
         void SetEntry(string key, string value, TimeSpan expireIn);
-        T GetFromCache<T>(string key, TimeSpan expiredIn, Func<T> refreshFunc) where T : class;
     }
 }
