@@ -2,7 +2,7 @@
 
 How To Use
 
-'''csharp
+```csharp
 
 var hosts = new[] { "redis1.host.com", "redis2.host.com", "redis3.host.com" };
 
@@ -16,4 +16,4 @@ var client = new ShardedRedisClient(
 );
 
 var val = client.Get("key");
-'''
+```
